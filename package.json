@@ -13,6 +13,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
+      "npm run tslint",
       "npm run prettier:fix",
       "git add"
     ]
@@ -24,9 +25,12 @@
     }
   },
   "dependencies": {
+    "polished": "^3.0.3",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-icons": "^3.5.0",
     "react-scripts": "2.1.8",
+    "react-transition-group": "^2.6.0",
     "styled-components": "^4.1.3",
     "typescript": "3.3.3333"
   },
@@ -37,6 +41,7 @@
     "@types/node": "11.11.0",
     "@types/react": "16.8.7",
     "@types/react-dom": "16.8.2",
+    "@types/react-transition-group": "^2.0.16",
     "@types/styled-components": "^4.1.12",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
