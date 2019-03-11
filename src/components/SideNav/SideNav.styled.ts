@@ -19,5 +19,4 @@ export const Nav = styled.div`
   left: 0;
   background-color: ${c.WHITE};
   z-index: 1;
-  transition: all 300ms;
 `
