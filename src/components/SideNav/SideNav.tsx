@@ -8,19 +8,19 @@ import { AppProps } from './SideNav.typings'
 const EnhancedNav = withTransition(s.Nav)
 const EnhancedOverlay = withTransition(s.Overlay)
 
-class SideNav extends React.Component<AppProps> {
-  public render() {
-    const { children, onClickOutside, show } = this.props
-
-    return (
-      <>
-        <EnhancedNav show={show} transitionType={TransitionType.SlideInLeft}>
-          {children}
-        </EnhancedNav>
-        <EnhancedOverlay show={show} onClick={onClickOutside} />
-      </>
-    )
-  }
+const SideNav: React.FC<AppProps> = ({ children, onClickOutside, show }) => {
+  return (
+    <>
+      <EnhancedNav
+        mode="inline"
+        show={show}
+        transitionType={TransitionType.SlideInLeft}
+      >
+        {children}
+      </EnhancedNav>
+      <EnhancedOverlay show={show} onClick={onClickOutside} />
+    </>
+  )
 }
 
 export default SideNav

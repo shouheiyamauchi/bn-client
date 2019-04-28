@@ -6,7 +6,7 @@ import { TransitionProps } from './Transition.typings'
 
 const withTransition = <P extends object>(
   Component: React.ComponentType<P>
-): React.SFC<P & TransitionProps> => ({
+): React.FC<P & TransitionProps> => ({
   transitionType = TransitionType.Fade,
   onExited,
   show,

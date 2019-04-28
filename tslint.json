@@ -13,6 +13,7 @@
           "import-sources-order": "case-insensitive"
         }
       },
+    "jsx-no-lambda": false,
     "no-console": false,
     "no-implicit-dependencies": [true, ["~src"]],
     "no-submodule-imports": [false],
