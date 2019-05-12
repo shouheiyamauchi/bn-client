@@ -1,6 +1,7 @@
 import { Tag } from '../TagsContainer/TagsContainer.typings'
 
 export interface MoveSummaryProps extends MoveData {
+  editing?: boolean
   parentId: string
 }
 

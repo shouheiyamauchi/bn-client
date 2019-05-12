@@ -13,6 +13,13 @@ const Move: React.FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
 
   const [loading, setLoading] = React.useState(true)
   const [editingTitle, setEditingTitle] = React.useState<string | null>(null)
+  const [editingDescription, setEditingDescription] = React.useState<
+    string | null
+  >(null)
+  const [editingTransitionsIn, setEditingTransitionsIn] = React.useState(false)
+  const [editingTransitionsOut, setEditingTransitionsOut] = React.useState(
+    false
+  )
 
   React.useEffect(() => {
     console.log('GET NEW DATA', match.params.id)
@@ -23,7 +30,8 @@ const Move: React.FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
     <>
       <Loading show={loading} />
       <s.Item
-        editing={editingTitle !== null}
+        editingDescription={editingDescription !== null}
+        editingTitle={editingTitle !== null}
         size="small"
         title={
           editingTitle !== null ? (
@@ -45,16 +53,102 @@ const Move: React.FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
         }
         type="inner"
       >
-        {description}
-      </s.Item>
-      <s.Item size="small" title="Transitions In">
-        <MoveSummaryList parentId="transitionsIn" moves={transitionsIn} />
-      </s.Item>
-      <s.Item size="small" title="Transitions Out">
-        <MoveSummaryList parentId="transitionsOut" moves={transitionsOut} />
+        {editingDescription !== null ? (
+          <>
+            <s.DescriptionInput
+              autosize={true}
+              onChange={(e) => setEditingDescription(e.target.value)}
+              value={editingDescription + '\n'}
+            />
+            <s.DescriptionIconContainer editingDescription={true}>
+              <Icon
+                type="check-square"
+                onClick={() => setEditingDescription(null)}
+              />
+              &nbsp;
+              <Icon
+                type="close-square"
+                onClick={() => setEditingDescription(null)}
+              />
+            </s.DescriptionIconContainer>
+          </>
+        ) : (
+          <>
+            {description}
+            <br />
+            <br />
+            <s.DescriptionIconContainer editingDescription={false}>
+              <Icon
+                type="edit"
+                onClick={() => setEditingDescription(description)}
+              />
+            </s.DescriptionIconContainer>
+          </>
+        )}
       </s.Item>
       <s.Item size="small" title="Multimedia">
-        This is some description for this move. This doesn't need to be too long
+        There will be a list of multimedia here.
+      </s.Item>
+      <s.Item
+        size="small"
+        title={
+          <s.TitleContainer>
+            Transitions In
+            {editingTransitionsIn ? (
+              <div>
+                <Icon
+                  type="plus-square"
+                  onClick={() => setEditingTransitionsIn(false)}
+                />
+                &nbsp;
+                <Icon
+                  type="close-square"
+                  onClick={() => setEditingTransitionsIn(false)}
+                />
+              </div>
+            ) : (
+              <Icon type="edit" onClick={() => setEditingTransitionsIn(true)} />
+            )}
+          </s.TitleContainer>
+        }
+      >
+        <MoveSummaryList
+          parentId="transitionsIn"
+          editing={editingTransitionsIn}
+          moves={transitionsIn}
+        />
+      </s.Item>
+      <s.Item
+        size="small"
+        title={
+          <s.TitleContainer>
+            Transitions Out
+            {editingTransitionsOut ? (
+              <div>
+                <Icon
+                  type="plus-square"
+                  onClick={() => setEditingTransitionsOut(false)}
+                />
+                &nbsp;
+                <Icon
+                  type="close-square"
+                  onClick={() => setEditingTransitionsOut(false)}
+                />
+              </div>
+            ) : (
+              <Icon
+                type="edit"
+                onClick={() => setEditingTransitionsOut(true)}
+              />
+            )}
+          </s.TitleContainer>
+        }
+      >
+        <MoveSummaryList
+          parentId="transitionsOut"
+          editing={editingTransitionsOut}
+          moves={transitionsOut}
+        />
       </s.Item>
       <s.Item size="small" title="Tags">
         <TagsContainer parentId={id} tags={tags} wrapline={true} />

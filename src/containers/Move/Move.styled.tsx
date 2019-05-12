@@ -8,21 +8,33 @@ export const TitleContainer = styled.div`
   align-items: center;
 `
 
-export const Item = styled(({ editing, ...props }) => <Card {...props} />)<{
-  editing?: boolean
+export const Item = styled(({ editingDescription, editingTitle, ...props }) => (
+  <Card {...props} />
+))<{
+  editingTitle?: boolean
 }>`
   margin 4px 0;
 
   > .ant-card-head {
     > .ant-card-head-wrapper {
       > .ant-card-head-title {
-        ${({ editing }) =>
-          editing &&
+        ${({ editingTitle }) =>
+          editingTitle &&
           css`
             padding: 2.5px 0;
             margin-left: -7px;
           `}
       }
+    }
+  }
+
+  &.ant-card-small {
+    > .ant-card-body {
+      ${({ editingDescription }) =>
+        editingDescription &&
+        css`
+          padding: 8.5px 5px 7.5px 5px;
+        `}
     }
   }
 `
@@ -32,4 +44,25 @@ export const TitleInput = styled(Input)`
   padding-left: 6px;
   padding-right: 6px;
   margin-right: 8px;
+`
+
+export const DescriptionInput = styled(Input.TextArea)`
+  padding-top: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+`
+
+export const DescriptionIconContainer = styled.div<{
+  editingDescription: boolean
+}>`
+  text-align: right;
+  ${({ editingDescription }) =>
+    editingDescription
+      ? css`
+          margin-right: 7px;
+        `
+      : css`
+          margin-top: 4px;
+          margin-bottom: -4px;
+        `}
 `

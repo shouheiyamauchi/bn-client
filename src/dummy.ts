@@ -17,7 +17,8 @@ export const categories = {
               childrenCategory: [],
               moves: [
                 {
-                  description: 'This is some sort of description 222',
+                  description:
+                    'This is some sort of description 222. Let me make this a multiline description so I can test the UI properly.',
                   id: '1',
                   name: 'Some Move',
                   tags: [
@@ -611,7 +612,8 @@ export const categories = {
 }
 
 export const move = {
-  description: 'This is some sort of description 222',
+  description:
+    'This is some sort of description 222. Let me make this a multiline description so I can test the UI properly. More lines here I need please.',
   id: '1',
   name: 'Some Move',
   tags: [

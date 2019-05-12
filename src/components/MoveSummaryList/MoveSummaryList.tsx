@@ -6,14 +6,16 @@ import * as s from './MoveSummaryList.styled'
 import { MoveSummaryListProps } from './MoveSummaryList.typings'
 
 const MoveSummaryList: React.FC<MoveSummaryListProps> = ({
-  parentId,
-  moves
+  editing,
+  moves,
+  parentId
 }) => (
   <s.Container>
     <s.SubContainer>
       {moves.map((move) => (
         <MoveSummary
           key={`${parentId}-${move.id}`}
+          editing={editing}
           parentId={`${parentId}-${move.id}`}
           {...move}
         />
