@@ -23,12 +23,15 @@ export const IconContainer = styled.div`
   bottom: 2px;
 `
 
+// prettier-ignore
 export const StyledAnchor = styled(Anchor)<{ showAnchor: boolean }>`
   background-color: transparent;
   max-height: calc(100vh - 27px) !important;
 
   > .ant-anchor {
-    background-color: ${c.WHITE} > .ant-anchor-ink {
+    background-color: ${c.WHITE}
+
+    > .ant-anchor-ink {
       > .ant-anchor-ink-ball.visible {
         transition: opacity ${EASE_OUT};
         opacity: ${({ showAnchor }) => (showAnchor ? '1' : '0')};
