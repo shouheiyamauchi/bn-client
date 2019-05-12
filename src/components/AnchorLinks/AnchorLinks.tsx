@@ -20,10 +20,8 @@ const AnchorLinks: React.FC<AnchorLinksProps> = ({ pageId }) => {
     category: CategoryData,
     parentId: string,
     level: number = -1
-  ): JSX.Element[] => {
-    level++
-
-    return category.tags.map((tag) => {
+  ): JSX.Element[] =>
+    category.tags.map((tag) => {
       const uniqueTagId = `${parentId}-${tag.id}`
       return (
         <React.Fragment key={`anchor-${uniqueTagId}`}>
@@ -47,12 +45,11 @@ const AnchorLinks: React.FC<AnchorLinksProps> = ({ pageId }) => {
           />
           {(!collapsed[pageId] || !collapsed[pageId][uniqueTagId]) &&
             tag.childrenCategory.map((childrenCategory) =>
-              generateLinks(childrenCategory, uniqueTagId, level)
+              generateLinks(childrenCategory, uniqueTagId, level + 1)
             )}
         </React.Fragment>
       )
     })
-  }
 
   return (
     <s.Container showAnchor={showAnchor}>
@@ -61,10 +58,10 @@ const AnchorLinks: React.FC<AnchorLinksProps> = ({ pageId }) => {
           onClick={() => setShowAnchor(!showAnchor)}
           style={{
             background: c.WHITE,
-            padding: '2px',
             border: `solid 1px ${c.BLACK}`,
             borderRadius: '2px 0 0 2px',
-            opacity: 0.95
+            opacity: 0.95,
+            padding: '2px'
           }}
           type={showAnchor ? 'menu-unfold' : 'menu-fold'}
         />
