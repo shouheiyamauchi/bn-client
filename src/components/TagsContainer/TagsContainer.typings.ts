@@ -1,5 +1,11 @@
-import { TagProps } from '../Tag/Tag.typings'
-
 export interface TagsContainerProps {
-  tags: TagProps[]
+  parentId: string
+  tags: Tag[]
+  wrapline?: boolean
+}
+
+export interface Tag {
+  id: string
+  color: string
+  name: string
 }

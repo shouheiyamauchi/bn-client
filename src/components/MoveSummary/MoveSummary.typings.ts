@@ -1,8 +1,12 @@
-import { TagProps } from '../Tag/Tag.typings'
+import { Tag } from '../TagsContainer/TagsContainer.typings'
 
-export interface MoveSummaryProps {
+export interface MoveSummaryProps extends MoveData {
+  parentId: string
+}
+
+export interface MoveData {
+  description: string
   id: string
   name: string
-  description: string
-  tags: TagProps[]
+  tags: Tag[]
 }

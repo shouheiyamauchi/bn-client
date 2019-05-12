@@ -38,4 +38,19 @@ export const transitionStyled = css`
     transform: translate3d(-100%, 0, 0);
     transition: transform ${EASE_OUT};
   }
+
+  .transition-slide-in-right-enter {
+    transform: translate3d(100%, 0, 0);
+  }
+  .transition-slide-in-right-enter-active {
+    transform: translate3d(0, 0, 0);
+    transition: transform ${EASE_OUT};
+  }
+  .transition-slide-in-right-exit {
+    transform: translate3d(0, 0, 0);
+  }
+  .transition-slide-in-right-exit-active {
+    transform: translate3d(100%, 0, 0);
+    transition: transform ${EASE_OUT};
+  }
 `

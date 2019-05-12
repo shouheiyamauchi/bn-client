@@ -12,8 +12,18 @@ export const Container = styled.div`
   left: 0;
   background: ${c.WHITE};
   z-index: ${z.HEADER};
+  border-bottom: 1px solid ${c.SEASHELL};
 `
 
 export const Padding = styled.div`
   height: 30px;
+`
+
+export const HeaderTextContainer = styled.div`
+  cursor: pointer;
+  margin-left: 4px;
+`
+
+export const HeaderText = styled.span`
+  font-weight: bold;
 `

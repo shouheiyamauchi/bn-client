@@ -1,6 +1,11 @@
-import { MoveSummaryProps } from '../MoveSummary/MoveSummary.typings'
+import { MoveData } from '../MoveSummary/MoveSummary.typings'
 
-export interface CategoryProps {
+export interface CategoryProps extends CategoryData {
+  pageId: string
+  parentId: string
+}
+
+export interface CategoryData {
   id: string
   name: string
   tags: CategoryTag[]
@@ -9,6 +14,6 @@ export interface CategoryProps {
 interface CategoryTag {
   id: string
   name: string
-  childrenCategory: CategoryProps[]
-  moves: MoveSummaryProps[]
+  childrenCategory: CategoryData[]
+  moves: MoveData[]
 }

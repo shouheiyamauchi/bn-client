@@ -1,14 +1,22 @@
 import React from 'react'
 
-import Tag from '../Tag/Tag'
-
 import * as s from './TagsContainer.styled'
 import { TagsContainerProps } from './TagsContainer.typings'
 
-const TagsContainer: React.FC<TagsContainerProps> = ({ tags }) => (
-  <s.Container>
+const TagsContainer: React.FC<TagsContainerProps> = ({
+  parentId,
+  tags,
+  wrapline
+}) => (
+  <s.Container wrapline={wrapline}>
     {tags.map((tag) => (
-      <Tag key={tag.id} {...tag} />
+      <s.CustomTag
+        key={`${parentId}-${tag.id}`}
+        color={tag.color}
+        wrapline={wrapline}
+      >
+        {tag.name}
+      </s.CustomTag>
     ))}
   </s.Container>
 )
