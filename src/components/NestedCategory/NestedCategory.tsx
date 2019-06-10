@@ -3,10 +3,10 @@ import AnimateHeight from 'react-animate-height'
 import MoveSummaryList from '~src/components/MoveSummaryList/MoveSummaryList'
 import { CategoriesContext } from '~src/contexts/Categories/Categories'
 
-import * as s from './Category.styled'
-import { CategoryProps } from './Category.typings'
+import * as s from './NestedCategory.styled'
+import { NestedCategoryProps } from './NestedCategory.typings'
 
-const Category: React.FC<CategoryProps> = ({
+const NestedCategory: React.FC<NestedCategoryProps> = ({
   name,
   pageId,
   parentId,
@@ -34,16 +34,15 @@ const Category: React.FC<CategoryProps> = ({
                 collapsed[pageId] && collapsed[pageId][uniqueTagId] ? 0 : 'auto'
               }
             >
-              {tag.childrenCategory.length ? (
-                tag.childrenCategory.map((childCategory) => (
-                  <Category
-                    key={`${parentId}-${tag.id}-${childCategory.id}`}
-                    pageId={pageId}
-                    parentId={`${parentId}-${tag.id}`}
-                    {...childCategory}
-                  />
-                ))
-              ) : (
+              {tag.childCategory && (
+                <NestedCategory
+                  key={`${parentId}-${tag.id}-${tag.childCategory.id}`}
+                  pageId={pageId}
+                  parentId={`${parentId}-${tag.id}`}
+                  {...tag.childCategory}
+                />
+              )}
+              {tag.moves && (
                 <MoveSummaryList
                   parentId={`${parentId}-${tag.id}`}
                   moves={tag.moves}
@@ -57,4 +56,4 @@ const Category: React.FC<CategoryProps> = ({
   )
 }
 
-export default Category
+export default NestedCategory

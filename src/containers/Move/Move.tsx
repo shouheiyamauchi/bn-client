@@ -1,14 +1,23 @@
-import { Icon } from 'antd'
 import React from 'react'
 import { RouteComponentProps } from 'react-router-dom'
+import DescriptionBox from '~src/components/DescriptionBox/DescriptionBox'
+import {
+  TitleInput,
+  TitleIconContainer,
+  DescriptionInput,
+  DescriptionIconContainer
+} from '~src/components/DescriptionBox/DescriptionBox.styled'
+import IconGroup from '~src/components/IconGroup/IconGroup'
 import Loading from '~src/components/Loading/Loading'
 import MoveSummaryList from '~src/components/MoveSummaryList/MoveSummaryList'
 import TagsContainer from '~src/components/TagsContainer/TagsContainer'
 import { move } from '~src/dummy'
 
-import * as s from './Move.styled'
-
-const Move: React.FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
+const Move: React.FC<RouteComponentProps<{ moveId: string }>> = ({
+  match: {
+    params: { moveId }
+  }
+}) => {
   const { id, name, description, tags, transitionsIn, transitionsOut } = move
 
   const [loading, setLoading] = React.useState(true)
@@ -22,94 +31,131 @@ const Move: React.FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
   )
 
   React.useEffect(() => {
-    console.log('GET NEW DATA', match.params.id)
+    console.log('GET NEW DATA', moveId)
     window.setTimeout(() => setLoading(false), 2000)
-  }, [])
+  }, [moveId])
 
   return (
     <>
       <Loading show={loading} />
-      <s.Item
-        editingDescription={editingDescription !== null}
+      <DescriptionBox
         editingTitle={editingTitle !== null}
-        size="small"
+        editingDescription={editingDescription !== null}
         title={
           editingTitle !== null ? (
-            <s.TitleContainer>
-              <s.TitleInput
+            <>
+              <TitleInput
                 value={editingTitle}
                 onChange={(e) => setEditingTitle(e.target.value)}
               />
-              <Icon type="check-square" onClick={() => setEditingTitle(null)} />
-              &nbsp;
-              <Icon type="close-square" onClick={() => setEditingTitle(null)} />
-            </s.TitleContainer>
+              <TitleIconContainer>
+                <IconGroup
+                  icons={[
+                    {
+                      onClick: () => setEditingTitle(null),
+                      type: 'check-square'
+                    },
+                    {
+                      onClick: () => setEditingTitle(null),
+                      type: 'close-square'
+                    }
+                  ]}
+                />
+              </TitleIconContainer>
+            </>
           ) : (
-            <s.TitleContainer>
+            <>
               {name}
-              <Icon type="edit" onClick={() => setEditingTitle(name)} />
-            </s.TitleContainer>
+              <TitleIconContainer>
+                <IconGroup
+                  icons={[
+                    {
+                      onClick: () => setEditingTitle(name),
+                      type: 'edit'
+                    }
+                  ]}
+                />
+              </TitleIconContainer>
+            </>
           )
         }
         type="inner"
       >
         {editingDescription !== null ? (
           <>
-            <s.DescriptionInput
+            <DescriptionInput
               autosize={true}
               onChange={(e) => setEditingDescription(e.target.value)}
               value={editingDescription + '\n'}
             />
-            <s.DescriptionIconContainer editingDescription={true}>
-              <Icon
-                type="check-square"
-                onClick={() => setEditingDescription(null)}
+            <DescriptionIconContainer editingDescription={true}>
+              <IconGroup
+                icons={[
+                  {
+                    onClick: () => setEditingDescription(null),
+                    type: 'check-square'
+                  },
+                  {
+                    onClick: () => setEditingDescription(null),
+                    type: 'close-square'
+                  }
+                ]}
               />
-              &nbsp;
-              <Icon
-                type="close-square"
-                onClick={() => setEditingDescription(null)}
-              />
-            </s.DescriptionIconContainer>
+            </DescriptionIconContainer>
           </>
         ) : (
           <>
             {description}
             <br />
             <br />
-            <s.DescriptionIconContainer editingDescription={false}>
-              <Icon
-                type="edit"
-                onClick={() => setEditingDescription(description)}
+            <DescriptionIconContainer editingDescription={false}>
+              <IconGroup
+                icons={[
+                  {
+                    onClick: () => setEditingDescription(description),
+                    type: 'edit'
+                  }
+                ]}
               />
-            </s.DescriptionIconContainer>
+            </DescriptionIconContainer>
           </>
         )}
-      </s.Item>
-      <s.Item size="small" title="Multimedia">
+      </DescriptionBox>
+      <DescriptionBox title="Multimedia">
         There will be a list of multimedia here.
-      </s.Item>
-      <s.Item
-        size="small"
+      </DescriptionBox>
+      <DescriptionBox
         title={
-          <s.TitleContainer>
+          <>
             Transitions In
             {editingTransitionsIn ? (
-              <div>
-                <Icon
-                  type="plus-square"
-                  onClick={() => setEditingTransitionsIn(false)}
+              <TitleIconContainer>
+                <IconGroup
+                  icons={[
+                    {
+                      onClick: () => setEditingTransitionsIn(false),
+                      type: 'plus-square'
+                    },
+                    {
+                      onClick: () => setEditingTransitionsIn(false),
+                      type: 'close-square'
+                    }
+                  ]}
                 />
-                &nbsp;
-                <Icon
-                  type="close-square"
-                  onClick={() => setEditingTransitionsIn(false)}
-                />
-              </div>
+              </TitleIconContainer>
             ) : (
-              <Icon type="edit" onClick={() => setEditingTransitionsIn(true)} />
+              <TitleIconContainer>
+                <IconGroup
+                  icons={[
+                    {
+                      onClick: () => setEditingTransitionsIn(true),
+                      type: 'edit'
+                    }
+                  ]}
+                />
+              </TitleIconContainer>
             )}
-          </s.TitleContainer>
+          </>
         }
       >
         <MoveSummaryList
@@ -117,31 +163,39 @@ const Move: React.FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
           editing={editingTransitionsIn}
           moves={transitionsIn}
         />
-      </s.Item>
-      <s.Item
-        size="small"
+      </DescriptionBox>
+      <DescriptionBox
         title={
-          <s.TitleContainer>
+          <>
             Transitions Out
             {editingTransitionsOut ? (
-              <div>
-                <Icon
-                  type="plus-square"
-                  onClick={() => setEditingTransitionsOut(false)}
+              <TitleIconContainer>
+                <IconGroup
+                  icons={[
+                    {
+                      onClick: () => setEditingTransitionsOut(false),
+                      type: 'plus-square'
+                    },
+                    {
+                      onClick: () => setEditingTransitionsOut(false),
+                      type: 'close-square'
+                    }
+                  ]}
                 />
-                &nbsp;
-                <Icon
-                  type="close-square"
-                  onClick={() => setEditingTransitionsOut(false)}
-                />
-              </div>
+              </TitleIconContainer>
             ) : (
-              <Icon
-                type="edit"
-                onClick={() => setEditingTransitionsOut(true)}
-              />
+              <TitleIconContainer>
+                <IconGroup
+                  icons={[
+                    {
+                      onClick: () => setEditingTransitionsOut(true),
+                      type: 'edit'
+                    }
+                  ]}
+                />
+              </TitleIconContainer>
             )}
-          </s.TitleContainer>
+          </>
         }
       >
         <MoveSummaryList
@@ -149,10 +203,10 @@ const Move: React.FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
           editing={editingTransitionsOut}
           moves={transitionsOut}
         />
-      </s.Item>
-      <s.Item size="small" title="Tags">
+      </DescriptionBox>
+      <DescriptionBox title="Tags">
         <TagsContainer parentId={id} tags={tags} wrapline={true} />
-      </s.Item>
+      </DescriptionBox>
     </>
   )
 }

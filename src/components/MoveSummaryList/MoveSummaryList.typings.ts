@@ -1,4 +1,4 @@
-import { MoveData } from '../MoveSummary/MoveSummary.typings'
+import { MoveData } from '../../typings/move.typings'
 
 export interface MoveSummaryListProps {
   editing?: boolean

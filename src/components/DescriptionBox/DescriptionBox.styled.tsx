@@ -2,12 +2,6 @@ import { Card, Input } from 'antd'
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 
-export const TitleContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`
-
 export const Item = styled(({ editingDescription, editingTitle, ...props }) => (
   <Card {...props} />
 ))<{
@@ -29,6 +23,9 @@ export const Item = styled(({ editingDescription, editingTitle, ...props }) => (
   }
 
   &.ant-card-small {
+    > .ant-card-head {
+      padding: 0 5px 0 12px;
+    }
     > .ant-card-body {
       ${({ editingDescription }) =>
         editingDescription &&
@@ -39,11 +36,21 @@ export const Item = styled(({ editingDescription, editingTitle, ...props }) => (
   }
 `
 
+export const TitleContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const TitleIconContainer = styled.div`
+  margin-right: 7px;
+  margin-left: 5px;
+`
+
 export const TitleInput = styled(Input)`
   padding-top: 2px;
   padding-left: 6px;
   padding-right: 6px;
-  margin-right: 8px;
 `
 
 export const DescriptionInput = styled(Input.TextArea)`

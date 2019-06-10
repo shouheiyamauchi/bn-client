@@ -2,12 +2,18 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import App from '~src/containers/App/App'
+import { AccountProvider } from '~src/contexts/Account/Account'
+import { CategoriesProvider } from '~src/contexts/Categories/Categories'
 
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <AccountProvider>
+      <CategoriesProvider>
+        <App />
+      </CategoriesProvider>
+    </AccountProvider>
   </BrowserRouter>,
   document.getElementById('root')
 )

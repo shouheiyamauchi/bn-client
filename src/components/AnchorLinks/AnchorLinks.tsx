@@ -3,7 +3,7 @@ import * as React from 'react'
 import { CategoriesContext } from '~src/contexts/Categories/Categories'
 import * as c from '~src/styles/colors'
 
-import { CategoryData } from '../Category/Category.typings'
+import { NestedCategoryData } from '../NestedCategory/NestedCategory.typings'
 
 import * as s from './AnchorLinks.styled'
 import { AnchorLinksProps } from './AnchorLinks.typings'
@@ -17,7 +17,7 @@ const AnchorLinks: React.FC<AnchorLinksProps> = ({ pageId }) => {
   }
 
   const generateLinks = (
-    category: CategoryData,
+    category: NestedCategoryData,
     parentId: string,
     level: number = -1
   ): JSX.Element[] =>
@@ -44,9 +44,8 @@ const AnchorLinks: React.FC<AnchorLinksProps> = ({ pageId }) => {
             }
           />
           {(!collapsed[pageId] || !collapsed[pageId][uniqueTagId]) &&
-            tag.childrenCategory.map((childrenCategory) =>
-              generateLinks(childrenCategory, uniqueTagId, level + 1)
-            )}
+            tag.childCategory &&
+            generateLinks(tag.childCategory, uniqueTagId, level + 1)}
         </React.Fragment>
       )
     })

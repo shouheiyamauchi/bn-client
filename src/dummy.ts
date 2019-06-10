@@ -6,606 +6,591 @@ export const categories = {
     {
       id: 'footwork',
       name: 'Footwork',
-      childrenCategory: [
-        {
-          id: 'concept',
-          name: 'Concept',
-          tags: [
-            {
-              id: 'hook',
-              name: 'Hook',
-              childrenCategory: [],
-              moves: [
-                {
-                  description:
-                    'This is some sort of description 222. Let me make this a multiline description so I can test the UI properly.',
-                  id: '1',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: '1', name: 'yes' },
-                    { color: 'blue', id: '2', name: 'no' },
-                    { color: 'blue', id: '3', name: 'no' },
-                    { color: 'orange', id: '4', name: 'no' },
-                    { color: 'brown', id: '5', name: 'no' },
-                    { color: 'black', id: '6', name: 'no' },
-                    { color: 'blue', id: '7', name: 'no' },
-                    { color: 'blue', id: '8', name: 'no' },
-                    { color: 'blue', id: '9', name: 'no' },
-                    { color: 'pink', id: '10', name: 'yes' },
-                    { color: 'blue', id: '11', name: 'no' },
-                    { color: 'blue', id: '12', name: 'no' },
-                    { color: 'orange', id: '13', name: 'no' },
-                    { color: 'brown', id: '14', name: 'no' },
-                    { color: 'black', id: '15', name: 'no' },
-                    { color: 'blue', id: '16', name: 'no' },
-                    { color: 'blue', id: '17', name: 'no' },
-                    { color: 'blue', id: '18', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '2',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '3',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '4',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '5',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '6',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                }
-              ]
-            },
-            {
-              id: 'jump',
-              name: 'Jump',
-              childrenCategory: [],
-              moves: [
-                {
-                  description: 'This is some sort of description 2',
-                  id: '8',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '9',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '10',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '11',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '12',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '13',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                }
-              ]
-            },
-            {
-              id: 'none',
-              name: 'None',
-              childrenCategory: [],
-              moves: [
-                {
-                  description: 'This is some sort of description 2',
-                  id: '14',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '1',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '15',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '16',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '17',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '18',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ],
+      childCategory: {
+        id: 'concept',
+        name: 'Concept',
+        tags: [
+          {
+            id: 'hook',
+            name: 'Hook',
+            moves: [
+              {
+                description:
+                  'This is some sort of description 222. Let me make this a multiline description so I can test the UI properly.',
+                id: '1',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: '1', name: 'yes' },
+                  { color: 'blue', id: '2', name: 'no' },
+                  { color: 'blue', id: '3', name: 'no' },
+                  { color: 'orange', id: '4', name: 'no' },
+                  { color: 'brown', id: '5', name: 'no' },
+                  { color: 'black', id: '6', name: 'no' },
+                  { color: 'blue', id: '7', name: 'no' },
+                  { color: 'blue', id: '8', name: 'no' },
+                  { color: 'blue', id: '9', name: 'no' },
+                  { color: 'pink', id: '10', name: 'yes' },
+                  { color: 'blue', id: '11', name: 'no' },
+                  { color: 'blue', id: '12', name: 'no' },
+                  { color: 'orange', id: '13', name: 'no' },
+                  { color: 'brown', id: '14', name: 'no' },
+                  { color: 'black', id: '15', name: 'no' },
+                  { color: 'blue', id: '16', name: 'no' },
+                  { color: 'blue', id: '17', name: 'no' },
+                  { color: 'blue', id: '18', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '2',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '3',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '4',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '5',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '6',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'jump',
+            name: 'Jump',
+            moves: [
+              {
+                description: 'This is some sort of description 2',
+                id: '8',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '9',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '10',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '11',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '12',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '13',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'none',
+            name: 'None',
+            moves: [
+              {
+                description: 'This is some sort of description 2',
+                id: '14',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '1',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '15',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '16',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '17',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '18',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       moves: []
     },
     {
       id: 'powermove',
       name: 'Powermove',
-      childrenCategory: [
-        {
-          id: 'concept',
-          name: 'Concept',
-          tags: [
-            {
-              id: 'hook',
-              name: 'Hook',
-              childrenCategory: [],
-              moves: [
-                {
-                  description: 'This is some sort of description 2',
-                  id: '19',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '20',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '21',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '22',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '23',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '24',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                }
-              ]
-            },
-            {
-              id: 'jump',
-              name: 'Jump',
-              childrenCategory: [],
-              moves: [
-                {
-                  description: 'This is some sort of description 2',
-                  id: '25',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '26',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '27',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '28',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '29',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '30',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                }
-              ]
-            },
-            {
-              id: 'none',
-              name: 'None',
-              childrenCategory: [],
-              moves: [
-                {
-                  description: 'This is some sort of description 2',
-                  id: '31',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '32',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '33',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '34',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '35',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '36',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ],
+      childCategory: {
+        id: 'concept',
+        name: 'Concept',
+        tags: [
+          {
+            id: 'hook',
+            name: 'Hook',
+            moves: [
+              {
+                description: 'This is some sort of description 2',
+                id: '19',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '20',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '21',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '22',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '23',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '24',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'jump',
+            name: 'Jump',
+            moves: [
+              {
+                description: 'This is some sort of description 2',
+                id: '25',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '26',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '27',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '28',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '29',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '30',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'none',
+            name: 'None',
+            moves: [
+              {
+                description: 'This is some sort of description 2',
+                id: '31',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '32',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '33',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '34',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '35',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '36',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       moves: []
     },
     {
       id: 'none',
       name: 'None',
-      childrenCategory: [
-        {
-          id: 'concept',
-          name: 'Concept',
-          tags: [
-            {
-              id: 'hook',
-              name: 'Hook',
-              childrenCategory: [],
-              moves: [
-                {
-                  description: 'This is some sort of description 2',
-                  id: '37',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '38',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '39',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '40',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '41',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '42',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                }
-              ]
-            },
-            {
-              id: 'jump',
-              name: 'Jump',
-              childrenCategory: [],
-              moves: [
-                {
-                  description: 'This is some sort of description 2',
-                  id: '43',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '44',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '45',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '46',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '47',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '48',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                }
-              ]
-            },
-            {
-              id: 'none',
-              name: 'None',
-              childrenCategory: [],
-              moves: [
-                {
-                  description: 'This is some sort of description 2',
-                  id: '49',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '1',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '50',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '51',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description 2',
-                  id: '52',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                },
-                {
-                  description: 'This is some sort of description',
-                  id: '53',
-                  name: 'Some Move',
-                  tags: [
-                    { color: 'pink', id: 'abc', name: 'yes' },
-                    { color: 'blue', id: 'def', name: 'no' }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ],
+      childCategory: {
+        id: 'concept',
+        name: 'Concept',
+        tags: [
+          {
+            id: 'hook',
+            name: 'Hook',
+            moves: [
+              {
+                description: 'This is some sort of description 2',
+                id: '37',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '38',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '39',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '40',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '41',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '42',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'jump',
+            name: 'Jump',
+            moves: [
+              {
+                description: 'This is some sort of description 2',
+                id: '43',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '44',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '45',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '46',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '47',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '48',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'none',
+            name: 'None',
+            moves: [
+              {
+                description: 'This is some sort of description 2',
+                id: '49',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '1',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '50',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '51',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description 2',
+                id: '52',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              },
+              {
+                description: 'This is some sort of description',
+                id: '53',
+                name: 'Some Move',
+                tags: [
+                  { color: 'pink', id: 'abc', name: 'yes' },
+                  { color: 'blue', id: 'def', name: 'no' }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       moves: []
     }
   ]

@@ -1,21 +1,15 @@
 import update from 'immutability-helper'
 import * as React from 'react'
-import { CategoryData } from '~src/components/Category/Category.typings'
+import { NestedCategoryData } from '~src/components/NestedCategory/NestedCategory.typings'
+import { Tag } from '~src/components/TagsContainer/TagsContainer.typings'
 
-import { CategoriesContextState } from './Categories.typings'
+import { CategoriesContextState, Category } from './Categories.typings'
 
-const stateTemplate: CategoriesContextState = {
-  collapsed: {},
-  pages: {},
-  setCollapsed: () => {
-    /* */
-  },
-  setPage: () => {
-    /* */
-  }
-}
+const stateTemplate = {}
 
-export const CategoriesContext = React.createContext(stateTemplate)
+export const CategoriesContext = React.createContext(
+  stateTemplate as CategoriesContextState
+)
 
 export class CategoriesProvider extends React.Component<
   {},
@@ -25,10 +19,14 @@ export class CategoriesProvider extends React.Component<
     super(props)
 
     this.state = {
+      categories: [],
       collapsed: {},
       pages: {},
+      setCategories: this.setCategories,
       setCollapsed: this.setCollapsed,
-      setPage: this.setPage
+      setPage: this.setPage,
+      setTags: this.setTags,
+      tags: []
     }
   }
 
@@ -46,7 +44,7 @@ export class CategoriesProvider extends React.Component<
     })
   }
 
-  public setPage = (pageId: string, category: CategoryData) => {
+  public setPage = (pageId: string, category: NestedCategoryData) => {
     this.setState((prevState) =>
       update(prevState, {
         pages: {
@@ -54,6 +52,14 @@ export class CategoriesProvider extends React.Component<
         }
       })
     )
+  }
+
+  public setCategories = (categories: Category[]) => {
+    this.setState({ categories })
+  }
+
+  public setTags = (tags: Tag[]) => {
+    this.setState({ tags })
   }
 
   public render() {

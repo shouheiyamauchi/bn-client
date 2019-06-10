@@ -2,10 +2,12 @@ import { Icon, Menu } from 'antd'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import SideNav from '~src/components/SideNav/SideNav'
+import { AccountContext } from '~src/contexts/Account/Account'
 
 import * as s from './Header.styled'
 
 const Header: React.FC = () => {
+  const { logout } = React.useContext(AccountContext)
   const [showMenu, setShowMenu] = React.useState(false)
 
   const toggleMenu = () => setShowMenu(!showMenu)
@@ -46,6 +48,15 @@ const Header: React.FC = () => {
         >
           <Menu.Item key="3">Option 3</Menu.Item>
           <Menu.Item key="4">Option 4</Menu.Item>
+          <Menu.Item
+            key="115"
+            onClick={() => {
+              logout()
+              toggleMenu()
+            }}
+          >
+            Logout
+          </Menu.Item>
         </Menu.ItemGroup>
       </SideNav>
       <s.Container>
