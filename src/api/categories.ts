@@ -5,12 +5,10 @@ import { getAuthHeader } from '~src/helpers/auth'
 interface CategoryApi {
   color: string
   created: string
-  description: string
   name: string
   tags: Array<{
     category: string
     created: string
-    description: string
     name: string
     updated: string
     user: string
@@ -26,3 +24,39 @@ export const list = () =>
       Authorization: getAuthHeader()
     }
   })
+
+export const create = ({ color, name }: { color: string; name: string }) =>
+  axios.post(
+    `${config.API}/categories`,
+    {
+      color,
+      name
+    },
+    {
+      headers: {
+        Authorization: getAuthHeader()
+      }
+    }
+  )
+
+export const update = ({
+  color,
+  id,
+  name
+}: {
+  color: string
+  id: string
+  name: string
+}) =>
+  axios.put(
+    `${config.API}/categories/${id}`,
+    {
+      color,
+      name
+    },
+    {
+      headers: {
+        Authorization: getAuthHeader()
+      }
+    }
+  )

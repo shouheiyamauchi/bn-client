@@ -21,7 +21,7 @@ const Move: React.FC<RouteComponentProps<{ moveId: string }>> = ({
   const { id, name, description, tags, transitionsIn, transitionsOut } = move
 
   const [loading, setLoading] = React.useState(true)
-  const [editingTitle, setEditingTitle] = React.useState<string | null>(null)
+  const [editingName, setEditingTitle] = React.useState<string | null>(null)
   const [editingDescription, setEditingDescription] = React.useState<
     string | null
   >(null)
@@ -39,13 +39,13 @@ const Move: React.FC<RouteComponentProps<{ moveId: string }>> = ({
     <>
       <Loading show={loading} />
       <DescriptionBox
-        editingTitle={editingTitle !== null}
+        editingName={editingName !== null}
         editingDescription={editingDescription !== null}
         title={
-          editingTitle !== null ? (
+          editingName !== null ? (
             <>
               <TitleInput
-                value={editingTitle}
+                value={editingName}
                 onChange={(e) => setEditingTitle(e.target.value)}
               />
               <TitleIconContainer>

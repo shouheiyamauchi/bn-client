@@ -6,13 +6,11 @@ interface TagApi {
   category: {
     color: string
     created: string
-    description: string
     name: string
     updated: string
     _id: string
   }
   created: string
-  description: string
   name: string
   updated: string
   user: string
@@ -25,3 +23,45 @@ export const list = () =>
       Authorization: getAuthHeader()
     }
   })
+
+export const create = ({
+  category,
+  name
+}: {
+  category: string
+  name: string
+}) =>
+  axios.post(
+    `${config.API}/tags`,
+    {
+      category,
+      name
+    },
+    {
+      headers: {
+        Authorization: getAuthHeader()
+      }
+    }
+  )
+
+export const update = ({
+  category,
+  id,
+  name
+}: {
+  category: string
+  id: string
+  name: string
+}) =>
+  axios.put(
+    `${config.API}/tags/${id}`,
+    {
+      category,
+      name
+    },
+    {
+      headers: {
+        Authorization: getAuthHeader()
+      }
+    }
+  )

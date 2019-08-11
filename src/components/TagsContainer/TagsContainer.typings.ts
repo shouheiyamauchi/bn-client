@@ -6,7 +6,7 @@ export interface TagsContainerProps {
 }
 
 export interface Tag {
-  id: string
   color: string
+  id: string
   name: string
 }

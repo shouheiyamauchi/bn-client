@@ -2,18 +2,18 @@ import { Card, Input } from 'antd'
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 
-export const Item = styled(({ editingDescription, editingTitle, ...props }) => (
+export const Item = styled(({ editingDescription, editingName, ...props }) => (
   <Card {...props} />
 ))<{
-  editingTitle?: boolean
+  editingName?: boolean
 }>`
   margin 4px 0;
 
   > .ant-card-head {
     > .ant-card-head-wrapper {
       > .ant-card-head-title {
-        ${({ editingTitle }) =>
-          editingTitle &&
+        ${({ editingName }) =>
+          editingName &&
           css`
             padding: 2.5px 0;
             margin-left: -7px;

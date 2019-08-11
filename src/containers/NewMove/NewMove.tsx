@@ -1,58 +1,37 @@
-import { Divider, TreeSelect } from 'antd'
+import { Button, Divider } from 'antd'
 import React from 'react'
-import * as categoriesApi from '~src/api/categories'
-import * as tagsApi from '~src/api/tags'
+import * as movesApi from '~src/api/moves'
 import DescriptionBox from '~src/components/DescriptionBox/DescriptionBox'
 import {
   TitleInput,
   TitleIconContainer,
-  DescriptionInput,
-  DescriptionIconContainer
+  DescriptionInput
 } from '~src/components/DescriptionBox/DescriptionBox.styled'
 import IconGroup from '~src/components/IconGroup/IconGroup'
 import Loading from '~src/components/Loading/Loading'
-// import MoveSummaryList from '~src/components/MoveSummaryList/MoveSummaryList'
 import TagsContainer from '~src/components/TagsContainer/TagsContainer'
 import { Tag } from '~src/components/TagsContainer/TagsContainer.typings'
+import CategoriesTags from '~src/containers/CategoriesTags/CategoriesTags'
 import { AccountContext } from '~src/contexts/Account/Account'
 import { CategoriesContext } from '~src/contexts/Categories/Categories'
 
 const NewMove: React.FC = () => {
   const { logout } = React.useContext(AccountContext)
-  const { categories, setCategories, setTags, tags } = React.useContext(
-    CategoriesContext
-  )
+  const { loadTags, tags } = React.useContext(CategoriesContext)
 
-  const [loading, setLoading] = React.useState(true)
-  const [editingTitle, setEditingTitle] = React.useState('')
+  const [loading, setLoading] = React.useState(false)
+  const [editingName, setEditingTitle] = React.useState('')
   const [editingDescription, setEditingDescription] = React.useState('')
   const [selectedTags, setSelectedTags] = React.useState<Tag[]>([])
+  const [
+    editingCategoriesTagsModal,
+    setEditingCategoriesTagsModalVisible
+  ] = React.useState(false)
 
   React.useEffect(() => {
-    Promise.all([
-      categoriesApi.list().then(({ data: { data } }) => {
-        const categoriesData = data.map((category) => ({
-          id: category._id,
-          name: category.name,
-          tags: category.tags.map((tag) => ({
-            color: category.color,
-            id: tag._id,
-            name: tag.name
-          }))
-        }))
+    setLoading(true)
 
-        setCategories(categoriesData)
-      }),
-      tagsApi.list().then(({ data: { data } }) => {
-        const tagsData = data.map((tag) => ({
-          color: tag.category.color,
-          id: tag._id,
-          name: tag.name
-        }))
-
-        setTags(tagsData)
-      })
-    ])
+    loadTags()
       .then(() => {
         setLoading(false)
       })
@@ -64,10 +43,13 @@ const NewMove: React.FC = () => {
       })
   }, [])
 
-  const onSelectTag = (value: string) => {
-    const [type, itemId] = value.split('-')
-    if (type === 'tag') {
-      setSelectedTags([...selectedTags, tags.find((tag) => tag.id === itemId)!])
+  const onSelectTag = (id: string) => {
+    const selectedTag = tags.find((tag) => tag.id === id)
+    const alreadySelected = Boolean(selectedTags.find((tag) => tag.id === id))
+    if (selectedTag) {
+      alreadySelected
+        ? removeTag(id)
+        : setSelectedTags([...selectedTags, selectedTag])
     }
   }
 
@@ -75,44 +57,28 @@ const NewMove: React.FC = () => {
     setSelectedTags(selectedTags.filter((tag) => tag.id !== tagId))
   }
 
-  const treeData = [
-    {
-      key: 'newCategory',
-      title: 'Create new category',
-      value: 'newCategory'
-    },
-    ...categories.map((category) => ({
-      children: [
-        {
-          key: `newTag-${category.id}`,
-          title: 'Create new tag',
-          value: `newTag-${category.id}`
-        },
-        ...category.tags.map((tag) => ({
-          disabled: Boolean(
-            selectedTags.find((selectedTag) => selectedTag.id === tag.id)
-          ),
-          key: tag.id,
-          title: tag.name,
-          value: `tag-${tag.id}`
-        }))
-      ],
-      key: category.id,
-      title: category.name,
-      value: `category-${category.id}`
-    }))
-  ]
+  const createMove = async () => {
+    const response = await movesApi.create({
+      description: editingDescription,
+      draft: true,
+      multimedia: [],
+      name: editingName,
+      tags: selectedTags.map(({ id }) => id)
+    })
+
+    console.log(response.data.data._id)
+  }
 
   return (
     <>
       <Loading show={loading} />
       <DescriptionBox
-        editingTitle={editingTitle !== null}
+        editingName={editingName !== null}
         editingDescription={editingDescription !== null}
         title={
           <TitleInput
             placeholder="Title of move"
-            value={editingTitle}
+            value={editingName}
             onChange={(e) => setEditingTitle(e.target.value)}
           />
         }
@@ -134,26 +100,32 @@ const NewMove: React.FC = () => {
             Tags
             <TitleIconContainer>
               <IconGroup
-                icons={[
-                  {
-                    onClick: () => alert('Add tag'),
-                    type: 'plus-square'
-                  }
-                ]}
+                icons={
+                  editingCategoriesTagsModal
+                    ? [
+                        {
+                          onClick: () =>
+                            setEditingCategoriesTagsModalVisible(false),
+                          type: 'close-square'
+                        }
+                      ]
+                    : [
+                        {
+                          onClick: () =>
+                            setEditingCategoriesTagsModalVisible(true),
+                          type: 'plus-square'
+                        }
+                      ]
+                }
               />
             </TitleIconContainer>
           </>
         }
       >
-        <TreeSelect
-          showSearch={true}
-          style={{ width: '100%' }}
-          dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-          placeholder="Select tag to add"
-          treeDefaultExpandAll={true}
-          onSelect={onSelectTag}
-          value={undefined}
-          treeData={treeData}
+        <CategoriesTags
+          editing={editingCategoriesTagsModal}
+          onClickTag={onSelectTag}
+          selectedTags={selectedTags}
         />
         <Divider />
         <TagsContainer
@@ -163,6 +135,9 @@ const NewMove: React.FC = () => {
           wrapline={true}
         />
       </DescriptionBox>
+      <Button block={true} onClick={createMove}>
+        Create Move
+      </Button>
     </>
   )
 }
